@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>OrthoSG | Open the Finals Coach</title>
-  <meta name="description" content="Open OrthoSG Finals Coach for adaptive SBA, OSCE, imaging and viva practice for Singapore medical finals.">
+  <title>OrthoSG Finals Coach | Practise Orthopaedic Finals with an AI Examiner</title>
+  <meta name="description" content="Practise orthopaedic finals with an AI examiner — Part B OSCE, imaging, SBAs and targeted remediation, built around a Singapore finals core.">
   <meta name="theme-color" content="#24304B">
 
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -15,7 +15,7 @@
   <link rel="manifest" href="site.webmanifest">
 
   <meta property="og:title" content="OrthoSG Finals Coach">
-  <meta property="og:description" content="Adaptive orthopaedic finals practice, one case at a time.">
+  <meta property="og:description" content="Practise orthopaedic finals with an AI examiner — one case at a time.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://orthosg.github.io/">
   <meta property="og:image" content="https://orthosg.github.io/og.png">
@@ -23,7 +23,7 @@
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="OrthoSG Finals Coach">
-  <meta name="twitter:description" content="Adaptive orthopaedic finals practice, one case at a time.">
+  <meta name="twitter:description" content="Practise orthopaedic finals with an AI examiner — one case at a time.">
   <meta name="twitter:image" content="https://orthosg.github.io/og.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -46,12 +46,15 @@
     main{padding:64px 0 0}
     .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
     .eyebrow{margin:0 0 18px;color:var(--berry);font:500 10px "IBM Plex Mono",monospace;letter-spacing:.18em}
-    h1{font:800 clamp(38px,4.6vw,58px)/1.04 Manrope,sans-serif;letter-spacing:-.03em;margin:0 0 20px}h1 em{font-style:normal;background:linear-gradient(105deg,var(--blue),var(--berry));-webkit-background-clip:text;background-clip:text;color:transparent}
+    h1{font:800 clamp(34px,4.2vw,52px)/1.08 Manrope,sans-serif;letter-spacing:-.03em;margin:0 0 20px}h1 em{font-style:normal;background:linear-gradient(105deg,var(--blue),var(--berry));-webkit-background-clip:text;background-clip:text;color:transparent}
     .lede{max-width:52ch;color:var(--muted);font-size:17px;line-height:1.7;margin:0 0 30px}
     .actions{display:flex;gap:12px;margin-top:2px;flex-wrap:wrap}.button{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:14px 23px;border-radius:999px;font:700 13px Manrope,sans-serif;text-decoration:none;transition:transform .2s ease,box-shadow .2s ease,background .2s ease}.primary{background:linear-gradient(110deg,var(--ink),#334a70 56%,var(--berry));color:#fff;box-shadow:0 15px 30px -17px rgba(76,43,79,.7)}.primary:hover{transform:translateY(-2px);box-shadow:0 19px 34px -17px rgba(76,43,79,.7)}
     .textlink{align-self:center;display:inline-flex;align-items:center;gap:6px;color:var(--berry);font:700 13px Manrope,sans-serif;text-decoration:none;padding:14px 6px}
     .textlink:hover{text-decoration:underline}
-    .modes{display:flex;gap:9px;flex-wrap:wrap;margin-top:26px}.modes span{padding:7px 12px;border:1px solid rgba(47,115,168,.16);border-radius:999px;background:rgba(255,255,255,.68);color:#596579;font:500 10px "IBM Plex Mono",monospace}.modes span:nth-child(even){border-color:rgba(195,61,121,.18);background:rgba(252,238,245,.72)}
+    .quicklinks{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
+    .qchip{display:inline-flex;align-items:center;gap:7px;padding:9px 15px;border:1px solid rgba(47,115,168,.22);border-radius:999px;background:rgba(255,255,255,.75);color:var(--ink);font:600 12.5px Manrope,sans-serif;text-decoration:none;transition:transform .15s ease,background .15s ease,border-color .15s ease}
+    .qchip:hover{transform:translateY(-1px);background:#fff;border-color:var(--berry)}
+    .qchip:nth-child(2n){border-color:rgba(195,61,121,.22)}
     .fine{margin:26px 0 0;max-width:56ch;color:#727b8b;font-size:11px;line-height:1.65}
 
     /* product mock */
@@ -68,24 +71,57 @@
     .pill{border:1px solid var(--line);background:#fff;color:var(--ink);font:600 11px Manrope,sans-serif;padding:7px 12px;border-radius:999px}
     .pill.on{border-color:var(--berry);color:var(--berry);background:var(--paper)}
 
-    /* value strip */
-    .strip{margin-top:76px;padding-top:44px;border-top:1px solid rgba(159,47,99,.13)}
-    .strip-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
-    .strip-grid .item h3{font:700 15px Manrope,sans-serif;margin:0 0 8px;letter-spacing:-.01em}
-    .strip-grid .item p{margin:0;color:var(--muted);font-size:13.5px;line-height:1.65}
-    .strip-grid .item .num{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:8px;background:var(--paper);border:1px solid rgba(47,115,168,.2);color:var(--blue);font:700 11px "IBM Plex Mono",monospace;margin-bottom:12px}
+    /* generic section scaffolding */
+    section.block{margin-top:80px;padding-top:44px;border-top:1px solid rgba(159,47,99,.13)}
+    .kicker{margin:0 0 10px;color:var(--berry);font:600 10px "IBM Plex Mono",monospace;letter-spacing:.16em;text-transform:uppercase}
+    h2{font:800 clamp(22px,2.6vw,30px)/1.15 Manrope,sans-serif;letter-spacing:-.02em;margin:0 0 34px;max-width:32ch}
+
+    /* choose your practice */
+    .practice-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .practice-card{display:flex;flex-direction:column;gap:10px;padding:22px 20px;background:#fff;border:1px solid var(--line);border-radius:16px;text-decoration:none;color:var(--ink);transition:transform .15s ease,box-shadow .15s ease,border-color .15s ease}
+    .practice-card:hover{transform:translateY(-3px);box-shadow:0 20px 34px -22px rgba(36,48,75,.35);border-color:rgba(195,61,121,.3)}
+    .practice-card .ico{font-size:22px}
+    .practice-card h3{font:700 15px Manrope,sans-serif;margin:0;letter-spacing:-.01em}
+    .practice-card p{margin:0;color:var(--muted);font-size:13px;line-height:1.6;flex:1}
+    .practice-card .go{font:700 11px Manrope,sans-serif;color:var(--berry)}
+
+    /* how it works */
+    .steps{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+    .step{padding:18px 16px;background:rgba(255,255,255,.6);border:1px solid var(--line);border-radius:14px}
+    .step .num{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:7px;background:var(--paper);border:1px solid rgba(47,115,168,.2);color:var(--blue);font:700 11px "IBM Plex Mono",monospace;margin-bottom:10px}
+    .step h3{font:700 13.5px Manrope,sans-serif;margin:0 0 6px;letter-spacing:-.01em}
+    .step p{margin:0;color:var(--muted);font-size:12.5px;line-height:1.6}
+
+    /* why grid */
+    .why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px 24px}
+    .why-item{display:flex;align-items:flex-start;gap:10px;font-size:13.5px;color:var(--ink);line-height:1.6}
+    .why-item::before{content:"";flex:0 0 auto;width:7px;height:7px;margin-top:7px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--berry))}
+
+    /* evidence box */
+    .evidence-box{padding:26px 28px;background:#fff;border:1px solid var(--line);border-radius:16px}
+    .evidence-box p{margin:0;color:var(--muted);font-size:14px;line-height:1.75;max-width:70ch}
+    .evidence-box p+p{margin-top:12px}
+
+    /* feedback section */
+    .feedback-box{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;padding:28px 30px;background:linear-gradient(120deg,rgba(47,115,168,.08),rgba(195,61,121,.08));border:1px solid rgba(159,47,99,.16);border-radius:18px}
+    .feedback-box .copy p{margin:6px 0 0;color:var(--muted);font-size:13.5px;max-width:52ch}
 
     footer{display:flex;align-items:center;gap:24px;border-top:1px solid rgba(159,47,99,.13);padding:25px 0;color:var(--muted);font-size:10px;margin-top:64px}footer p{margin:0}footer a{margin-left:auto;color:var(--berry);font-weight:700;text-decoration:none}
     a:focus-visible{outline:3px solid var(--pink);outline-offset:4px;border-radius:8px}
 
     @media(max-width:860px){
       .hero-grid{grid-template-columns:1fr;gap:40px}
-      .strip-grid{grid-template-columns:1fr;gap:24px}
+      .practice-grid{grid-template-columns:repeat(2,1fr)}
+      .steps{grid-template-columns:repeat(2,1fr)}
+      .why-grid{grid-template-columns:1fr}
     }
     @media(max-width:560px){
       header,main,footer{width:min(100% - 30px,1120px)}header{height:74px}.status{display:none}
       main{padding:44px 0 0}.actions{flex-direction:column;align-items:stretch}.button{width:100%}.textlink{justify-content:center}
-      .strip{margin-top:56px;padding-top:34px}
+      section.block{margin-top:56px;padding-top:34px}
+      .practice-grid{grid-template-columns:1fr}
+      .steps{grid-template-columns:1fr}
+      .feedback-box{flex-direction:column;align-items:stretch;text-align:left}
     }
     @media(prefers-reduced-motion:no-preference){
       .rise{opacity:0;animation:rise .6s cubic-bezier(.22,.7,.25,1) both}
@@ -107,13 +143,18 @@
       <section class="hero-grid" style="padding:44px 0 0">
         <div>
           <p class="eyebrow rise rise-1">INDEPENDENT &middot; SINGAPORE MEDICAL FINALS</p>
-          <h1 class="rise rise-2">Orthopaedics practice, <em>one case at a time.</em></h1>
-          <p class="lede rise rise-3">Open the AI revision coach for adaptive SBAs, OSCEs, imaging interpretation and viva practice &mdash; built around a Singapore finals core.</p>
+          <h1 class="rise rise-2">Practise orthopaedic finals <em>with an AI examiner.</em></h1>
+          <p class="lede rise rise-3">Part B OSCE, imaging and SBA practice with structured feedback and source-grounded teaching &mdash; attempt first, then get told what you missed.</p>
           <div class="actions rise rise-4">
-            <a class="button primary" href="https://orthosg-finals-coach.med50091.chatgpt.site">Open Finals Coach <span aria-hidden="true">&rarr;</span></a>
+            <a class="button primary" href="https://orthosg-finals-coach.med50091.chatgpt.site">Start practising <span aria-hidden="true">&rarr;</span></a>
             <a class="textlink" href="https://forms.gle/eQ61Pxj2G6DMyGLh9" target="_blank" rel="noopener">Send feedback &rarr;</a>
           </div>
-          <div class="modes rise rise-5" aria-label="Available revision modes"><span>SPRINT</span><span>SBA</span><span>OSCE</span><span>IMAGING</span><span>VIVA</span></div>
+          <div class="quicklinks rise rise-5" aria-label="Start a specific revision mode">
+            <a class="qchip" href="https://orthosg-finals-coach.med50091.chatgpt.site">&#127917; Part B OSCE</a>
+            <a class="qchip" href="https://orthosg-finals-coach.med50091.chatgpt.site">&#129502; Imaging</a>
+            <a class="qchip" href="https://orthosg-finals-coach.med50091.chatgpt.site">&#128221; SBAs</a>
+            <a class="qchip" href="https://orthosg-finals-coach.med50091.chatgpt.site">&#129504; Weak-topic diagnostic</a>
+          </div>
           <p class="fine rise rise-5">Formative learner self-study only. Not affiliated with a medical school or healthcare institution, and not a measure of clinical competence.</p>
         </div>
 
@@ -132,23 +173,79 @@
         </div>
       </section>
 
-      <section class="strip">
-        <div class="strip-grid">
-          <div class="item">
-            <span class="num">01</span>
-            <h3>You answer first</h3>
-            <p>Every mode asks before it tells &mdash; SBAs, OSCE stations and vivas all wait for your attempt before revealing anything.</p>
+      <section class="block" aria-labelledby="practice-h">
+        <p class="kicker">Choose your practice</p>
+        <h2 id="practice-h">Four ways to practise, not eleven ways to read.</h2>
+        <div class="practice-grid">
+          <a class="practice-card" href="https://orthosg-finals-coach.med50091.chatgpt.site">
+            <span class="ico">&#127917;</span>
+            <h3>Part B OSCE</h3>
+            <p>Timed exam-style stations with structured feedback afterwards.</p>
+            <span class="go">Start &rarr;</span>
+          </a>
+          <a class="practice-card" href="https://orthosg-finals-coach.med50091.chatgpt.site">
+            <span class="ico">&#129502;</span>
+            <h3>Imaging</h3>
+            <p>Practise systematic interpretation, then a follow-up viva question.</p>
+            <span class="go">Start &rarr;</span>
+          </a>
+          <a class="practice-card" href="https://orthosg-finals-coach.med50091.chatgpt.site">
+            <span class="ico">&#128221;</span>
+            <h3>SBAs</h3>
+            <p>High-yield questions with reasoning, distractor analysis and remediation.</p>
+            <span class="go">Start &rarr;</span>
+          </a>
+          <a class="practice-card" href="https://orthosg-finals-coach.med50091.chatgpt.site">
+            <span class="ico">&#129504;</span>
+            <h3>Weak-topic diagnostic</h3>
+            <p>A short diagnostic identifies gaps, then targets revision at them directly.</p>
+            <span class="go">Start &rarr;</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="block" aria-labelledby="how-h">
+        <p class="kicker">How it works</p>
+        <h2 id="how-h">You answer first. The coach diagnoses second.</h2>
+        <div class="steps">
+          <div class="step"><span class="num">01</span><h3>Choose a mode</h3><p>Select OSCE, imaging or SBAs.</p></div>
+          <div class="step"><span class="num">02</span><h3>Attempt first</h3><p>Retrieval comes before explanation, every time.</p></div>
+          <div class="step"><span class="num">03</span><h3>Structured feedback</h3><p>Strengths, omissions and safety-critical gaps, named separately.</p></div>
+          <div class="step"><span class="num">04</span><h3>Remediate</h3><p>Focused teaching on exactly what you missed &mdash; not a full re-read.</p></div>
+          <div class="step"><span class="num">05</span><h3>Retest</h3><p>A near-transfer question checks the fix actually held.</p></div>
+        </div>
+      </section>
+
+      <section class="block" aria-labelledby="why-h">
+        <p class="kicker">Why OrthoSG</p>
+        <h2 id="why-h">Built to be practised, not just read.</h2>
+        <div class="why-grid">
+          <span class="why-item">Designed specifically for orthopaedic finals, not general medicine</span>
+          <span class="why-item">A conversational AI examiner, not a static question bank</span>
+          <span class="why-item">Source-grounded teaching, with local-policy dependencies flagged</span>
+          <span class="why-item">Structured formative feedback after every attempt</span>
+          <span class="why-item">Safety-focused clinical reasoning throughout, not a bolt-on section</span>
+          <span class="why-item">Built for repeated revision across the run-up to finals</span>
+        </div>
+      </section>
+
+      <section class="block" aria-labelledby="evidence-h">
+        <p class="kicker">Evidence and safety</p>
+        <h2 id="evidence-h">Formative, source-conscious, and clear about its limits.</h2>
+        <div class="evidence-box">
+          <p>OrthoSG is an educational revision tool. Clinical content is curated and progressively source-verified against authoritative references. Where a recommendation depends on local institutional policy, this is explicitly flagged for local verification rather than presented as universal.</p>
+          <p>OrthoSG does not certify competence and does not replace clinical supervision, institutional protocols or professional judgement.</p>
+        </div>
+      </section>
+
+      <section class="block" aria-labelledby="feedback-h">
+        <div class="feedback-box">
+          <div class="copy">
+            <p class="kicker" style="margin:0">Help improve OrthoSG</p>
+            <h2 id="feedback-h" style="margin:6px 0 0">Two minutes shapes the next release.</h2>
+            <p>Usefulness, realism, ease of use, your favourite mode, anything that felt wrong or inaccurate, and whether you'd recommend it to a classmate.</p>
           </div>
-          <div class="item">
-            <span class="num">02</span>
-            <h3>Safety sits on top</h3>
-            <p>Cauda equina, compartment syndrome, septic arthritis and the rest of the must-not-miss list recur across every revision mode.</p>
-          </div>
-          <div class="item">
-            <span class="num">03</span>
-            <h3>Built for SG finals</h3>
-            <p>A shared clinical core with curriculum mapping for YLL, LKCMedicine and Duke-NUS &mdash; not affiliated with, or endorsed by, any of them.</p>
-          </div>
+          <a class="button primary" href="https://forms.gle/eQ61Pxj2G6DMyGLh9" target="_blank" rel="noopener">Give 2-minute feedback <span aria-hidden="true">&rarr;</span></a>
         </div>
       </section>
     </main>
