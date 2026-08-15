@@ -1,256 +1,286 @@
-<!doctype html>
-<html lang="en-GB">
+<!DOCTYPE html>
+<html lang="en-SG">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>OrthoSG Finals Coach | Practise Orthopaedic Finals with an AI Examiner</title>
-  <meta name="description" content="Practise orthopaedic finals with an AI examiner — Part B OSCE, imaging, SBAs and targeted remediation, built around a Singapore finals core.">
-  <meta name="theme-color" content="#24304B">
-
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="icon" href="favicon.ico" sizes="any">
-  <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
-  <link rel="icon" href="favicon-16.png" sizes="16x16" type="image/png">
-  <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <link rel="manifest" href="site.webmanifest">
-
-  <meta property="og:title" content="OrthoSG Finals Coach">
-  <meta property="og:description" content="Practise orthopaedic finals with an AI examiner — one case at a time.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://orthosg.github.io/">
-  <meta property="og:image" content="https://orthosg.github.io/og.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="OrthoSG Finals Coach">
-  <meta name="twitter:description" content="Practise orthopaedic finals with an AI examiner — one case at a time.">
-  <meta name="twitter:image" content="https://orthosg.github.io/og.png">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
-  <style>
-    :root{--ink:#24304b;--blue:#2f73a8;--pink:#c33d79;--berry:#9f2f63;--paper:#fcf9fb;--muted:#5d6678;--line:#e5dce2;--green:#2f817d}
-    *{box-sizing:border-box}
-    body{margin:0;min-height:100vh;background:var(--paper);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
-    a{color:inherit}.skip{position:absolute;left:-999px;top:10px;background:#fff;padding:12px 16px;border-radius:10px;z-index:20}.skip:focus{left:10px}
-    .shell{min-height:100vh;display:grid;grid-template-rows:auto 1fr auto;background:radial-gradient(circle at 12% 12%,rgba(195,61,121,.12),transparent 27rem),radial-gradient(circle at 88% 18%,rgba(47,115,168,.13),transparent 31rem),linear-gradient(145deg,#fffafd 0%,#faf6f9 48%,#f3f8fc 100%)}
-    header,main,footer{width:min(1120px,calc(100% - 40px));margin:auto}
-    header{position:relative;height:84px;display:flex;align-items:center;border-bottom:1px solid rgba(159,47,99,.13)}
-    header::before{content:"";position:fixed;inset:0 0 auto;height:3px;background:linear-gradient(90deg,var(--blue) 0 48%,var(--pink) 52% 100%)}
-    .brand{display:flex;align-items:center;gap:12px;text-decoration:none}.mark{width:42px;height:42px;display:grid;place-items:center;border-radius:14px;background:linear-gradient(135deg,var(--blue) 0 48%,var(--pink) 52% 100%);color:#fff;font:800 19px Manrope,sans-serif;box-shadow:0 12px 28px -16px rgba(73,45,74,.5)}
-    .brand span:last-child{display:flex;flex-direction:column}.brand strong{font:800 16px Manrope,sans-serif;letter-spacing:-.02em}.brand small{font:500 9px "IBM Plex Mono",monospace;letter-spacing:.15em;text-transform:uppercase;color:var(--muted)}
-    .status{margin-left:auto;display:flex;align-items:center;gap:9px;font-size:11px;color:var(--green);font-weight:600}.status::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 0 5px rgba(47,129,125,.1)}
-
-    /* hero */
-    main{padding:64px 0 0}
-    .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
-    .eyebrow{margin:0 0 18px;color:var(--berry);font:500 10px "IBM Plex Mono",monospace;letter-spacing:.18em}
-    h1{font:800 clamp(34px,4.2vw,52px)/1.08 Manrope,sans-serif;letter-spacing:-.03em;margin:0 0 20px}h1 em{font-style:normal;background:linear-gradient(105deg,var(--blue),var(--berry));-webkit-background-clip:text;background-clip:text;color:transparent}
-    .lede{max-width:52ch;color:var(--muted);font-size:17px;line-height:1.7;margin:0 0 30px}
-    .actions{display:flex;gap:12px;margin-top:2px;flex-wrap:wrap}.button{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:14px 23px;border-radius:999px;font:700 13px Manrope,sans-serif;text-decoration:none;transition:transform .2s ease,box-shadow .2s ease,background .2s ease}.primary{background:linear-gradient(110deg,var(--ink),#334a70 56%,var(--berry));color:#fff;box-shadow:0 15px 30px -17px rgba(76,43,79,.7)}.primary:hover{transform:translateY(-2px);box-shadow:0 19px 34px -17px rgba(76,43,79,.7)}
-    .textlink{align-self:center;display:inline-flex;align-items:center;gap:6px;color:var(--berry);font:700 13px Manrope,sans-serif;text-decoration:none;padding:14px 6px}
-    .textlink:hover{text-decoration:underline}
-    .quicklinks{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
-    .qchip{display:inline-flex;align-items:center;gap:7px;padding:9px 15px;border:1px solid rgba(47,115,168,.22);border-radius:999px;background:rgba(255,255,255,.75);color:var(--ink);font:600 12.5px Manrope,sans-serif;text-decoration:none;transition:transform .15s ease,background .15s ease,border-color .15s ease}
-    .qchip:hover{transform:translateY(-1px);background:#fff;border-color:var(--berry)}
-    .qchip:nth-child(2n){border-color:rgba(195,61,121,.22)}
-    .fine{margin:26px 0 0;max-width:56ch;color:#727b8b;font-size:11px;line-height:1.65}
-
-    /* product mock */
-    .mock{background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:0 30px 60px -30px rgba(36,48,75,.28);overflow:hidden}
-    .mock-bar{display:flex;align-items:center;gap:6px;padding:12px 16px;border-bottom:1px solid var(--line);background:#fbf8fa}
-    .mock-bar .dot{width:8px;height:8px;border-radius:50%;background:#e3d6dd}
-    .mock-bar .t{margin-left:8px;font:500 10px "IBM Plex Mono",monospace;letter-spacing:.06em;color:var(--muted);text-transform:uppercase}
-    .mock-body{padding:18px 18px 8px;display:flex;flex-direction:column;gap:12px}
-    .msg{max-width:88%;padding:11px 14px;border-radius:14px;font-size:13.5px;line-height:1.55}
-    .msg .who{display:block;font:700 9px "IBM Plex Mono",monospace;letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px;opacity:.62}
-    .msg.u{align-self:flex-end;background:linear-gradient(135deg,var(--blue),var(--berry));color:#fff;border-bottom-right-radius:4px}
-    .msg.c{align-self:flex-start;background:#f3f0f3;color:var(--ink);border-bottom-left-radius:4px}
-    .mock-controls{display:flex;flex-wrap:wrap;gap:8px;padding:14px 18px 18px}
-    .pill{border:1px solid var(--line);background:#fff;color:var(--ink);font:600 11px Manrope,sans-serif;padding:7px 12px;border-radius:999px}
-    .pill.on{border-color:var(--berry);color:var(--berry);background:var(--paper)}
-
-    /* generic section scaffolding */
-    section.block{margin-top:80px;padding-top:44px;border-top:1px solid rgba(159,47,99,.13)}
-    .kicker{margin:0 0 10px;color:var(--berry);font:600 10px "IBM Plex Mono",monospace;letter-spacing:.16em;text-transform:uppercase}
-    h2{font:800 clamp(22px,2.6vw,30px)/1.15 Manrope,sans-serif;letter-spacing:-.02em;margin:0 0 34px;max-width:32ch}
-
-    /* choose your practice */
-    .practice-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-    .practice-card{display:flex;flex-direction:column;gap:10px;padding:22px 20px;background:#fff;border:1px solid var(--line);border-radius:16px;text-decoration:none;color:var(--ink);transition:transform .15s ease,box-shadow .15s ease,border-color .15s ease}
-    .practice-card:hover{transform:translateY(-3px);box-shadow:0 20px 34px -22px rgba(36,48,75,.35);border-color:rgba(195,61,121,.3)}
-    .practice-card .ico{font-size:22px}
-    .practice-card h3{font:700 15px Manrope,sans-serif;margin:0;letter-spacing:-.01em}
-    .practice-card p{margin:0;color:var(--muted);font-size:13px;line-height:1.6;flex:1}
-    .practice-card .go{font:700 11px Manrope,sans-serif;color:var(--berry)}
-
-    /* how it works */
-    .steps{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
-    .step{padding:18px 16px;background:rgba(255,255,255,.6);border:1px solid var(--line);border-radius:14px}
-    .step .num{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:7px;background:var(--paper);border:1px solid rgba(47,115,168,.2);color:var(--blue);font:700 11px "IBM Plex Mono",monospace;margin-bottom:10px}
-    .step h3{font:700 13.5px Manrope,sans-serif;margin:0 0 6px;letter-spacing:-.01em}
-    .step p{margin:0;color:var(--muted);font-size:12.5px;line-height:1.6}
-
-    /* why grid */
-    .why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px 24px}
-    .why-item{display:flex;align-items:flex-start;gap:10px;font-size:13.5px;color:var(--ink);line-height:1.6}
-    .why-item::before{content:"";flex:0 0 auto;width:7px;height:7px;margin-top:7px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--berry))}
-
-    /* evidence box */
-    .evidence-box{padding:26px 28px;background:#fff;border:1px solid var(--line);border-radius:16px}
-    .evidence-box p{margin:0;color:var(--muted);font-size:14px;line-height:1.75;max-width:70ch}
-    .evidence-box p+p{margin-top:12px}
-
-    /* feedback section */
-    .feedback-box{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;padding:28px 30px;background:linear-gradient(120deg,rgba(47,115,168,.08),rgba(195,61,121,.08));border:1px solid rgba(159,47,99,.16);border-radius:18px}
-    .feedback-box .copy p{margin:6px 0 0;color:var(--muted);font-size:13.5px;max-width:52ch}
-
-    footer{display:flex;align-items:center;gap:24px;border-top:1px solid rgba(159,47,99,.13);padding:25px 0;color:var(--muted);font-size:10px;margin-top:64px}footer p{margin:0}footer a{margin-left:auto;color:var(--berry);font-weight:700;text-decoration:none}
-    a:focus-visible{outline:3px solid var(--pink);outline-offset:4px;border-radius:8px}
-
-    @media(max-width:860px){
-      .hero-grid{grid-template-columns:1fr;gap:40px}
-      .practice-grid{grid-template-columns:repeat(2,1fr)}
-      .steps{grid-template-columns:repeat(2,1fr)}
-      .why-grid{grid-template-columns:1fr}
-    }
-    @media(max-width:560px){
-      header,main,footer{width:min(100% - 30px,1120px)}header{height:74px}.status{display:none}
-      main{padding:44px 0 0}.actions{flex-direction:column;align-items:stretch}.button{width:100%}.textlink{justify-content:center}
-      section.block{margin-top:56px;padding-top:34px}
-      .practice-grid{grid-template-columns:1fr}
-      .steps{grid-template-columns:1fr}
-      .feedback-box{flex-direction:column;align-items:stretch;text-align:left}
-    }
-    @media(prefers-reduced-motion:no-preference){
-      .rise{opacity:0;animation:rise .6s cubic-bezier(.22,.7,.25,1) both}
-      .rise-1{animation-delay:.02s}.rise-2{animation-delay:.1s}.rise-3{animation-delay:.18s}.rise-4{animation-delay:.26s}.rise-5{animation-delay:.34s}.rise-6{animation-delay:.3s}
-      @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
-    }
-    @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OrthoSG Finals Coach | Practise Orthopaedic Finals with an AI Examiner</title>
+<meta name="description" content="Practise orthopaedic finals with an AI examiner. Voice viva, Part B OSCE, X-ray interpretation and SBA practice with structured feedback and source-grounded teaching.">
+<meta property="og:title" content="OrthoSG Finals Coach | Practise Orthopaedic Finals with an AI Examiner">
+<meta property="og:description" content="Practise orthopaedic finals with an AI examiner. Voice viva, Part B OSCE, X-ray interpretation and SBA practice with structured feedback and source-grounded teaching.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0B1F33">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="favicon-16.png" sizes="16x16" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="canonical" href="https://orthosg.github.io/">
+<meta property="og:url" content="https://orthosg.github.io/">
+<meta property="og:image" content="https://orthosg.github.io/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
-  <a class="skip" href="#main">Skip to main content</a>
-  <div class="shell">
-    <header>
-      <a class="brand" href="https://orthosg.github.io/" aria-label="OrthoSG home"><span class="mark">O</span><span><strong>OrthoSG</strong><small>Finals revision</small></span></a>
-      <div class="status">Coach available</div>
-    </header>
-
-    <main id="main">
-      <section class="hero-grid" style="padding:44px 0 0">
-        <div>
-          <p class="eyebrow rise rise-1">INDEPENDENT &middot; SINGAPORE MEDICAL FINALS</p>
-          <h1 class="rise rise-2">Practise orthopaedic finals <em>with an AI examiner.</em></h1>
-          <p class="lede rise rise-3">Part B OSCE, imaging and SBA practice with structured feedback and source-grounded teaching &mdash; attempt first, then get told what you missed.</p>
-          <div class="actions rise rise-4">
-            <a class="button primary" href="https://orthosg-finals-coach.med50091.chatgpt.site">Start practising <span aria-hidden="true">&rarr;</span></a>
-            <a class="textlink" href="https://forms.gle/eQ61Pxj2G6DMyGLh9" target="_blank" rel="noopener">Send feedback &rarr;</a>
-          </div>
-          <div class="quicklinks rise rise-5" aria-label="Start a specific revision mode">
-            <a class="qchip" href="https://orthosg-finals-coach.med50091.chatgpt.site">&#127917; Part B OSCE</a>
-            <a class="qchip" href="https://orthosg-finals-coach.med50091.chatgpt.site">&#129502; Imaging</a>
-            <a class="qchip" href="https://orthosg-finals-coach.med50091.chatgpt.site">&#128221; SBAs</a>
-            <a class="qchip" href="https://orthosg-finals-coach.med50091.chatgpt.site">&#129504; Weak-topic diagnostic</a>
-          </div>
-          <p class="fine rise rise-5">Formative learner self-study only. Not affiliated with a medical school or healthcare institution, and not a measure of clinical competence.</p>
-        </div>
-
-        <div class="mock rise rise-6" aria-label="Example coaching exchange">
-          <div class="mock-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="t">Viva &middot; cauda equina syndrome</span></div>
-          <div class="mock-body">
-            <div class="msg u"><span class="who">You</span>Viva me on cauda equina syndrome.</div>
-            <div class="msg c"><span class="who">Coach</span>A 48-year-old with worsening low-back pain reports new difficulty initiating urination. What three history domains would you clarify immediately?</div>
-          </div>
-          <div class="mock-controls">
-            <button class="pill on" type="button" disabled>Answer</button>
-            <button class="pill" type="button" disabled>Get feedback</button>
-            <button class="pill" type="button" disabled>Harder case</button>
-            <button class="pill" type="button" disabled>Revision Passport</button>
-          </div>
-        </div>
-      </section>
-
-      <section class="block" aria-labelledby="practice-h">
-        <p class="kicker">Choose your practice</p>
-        <h2 id="practice-h">Four ways to practise, not eleven ways to read.</h2>
-        <div class="practice-grid">
-          <a class="practice-card" href="https://orthosg-finals-coach.med50091.chatgpt.site">
-            <span class="ico">&#127917;</span>
-            <h3>Part B OSCE</h3>
-            <p>Timed exam-style stations with structured feedback afterwards.</p>
-            <span class="go">Start &rarr;</span>
-          </a>
-          <a class="practice-card" href="https://orthosg-finals-coach.med50091.chatgpt.site">
-            <span class="ico">&#129502;</span>
-            <h3>Imaging</h3>
-            <p>Practise systematic interpretation, then a follow-up viva question.</p>
-            <span class="go">Start &rarr;</span>
-          </a>
-          <a class="practice-card" href="https://orthosg-finals-coach.med50091.chatgpt.site">
-            <span class="ico">&#128221;</span>
-            <h3>SBAs</h3>
-            <p>High-yield questions with reasoning, distractor analysis and remediation.</p>
-            <span class="go">Start &rarr;</span>
-          </a>
-          <a class="practice-card" href="https://orthosg-finals-coach.med50091.chatgpt.site">
-            <span class="ico">&#129504;</span>
-            <h3>Weak-topic diagnostic</h3>
-            <p>A short diagnostic identifies gaps, then targets revision at them directly.</p>
-            <span class="go">Start &rarr;</span>
-          </a>
-        </div>
-      </section>
-
-      <section class="block" aria-labelledby="how-h">
-        <p class="kicker">How it works</p>
-        <h2 id="how-h">You answer first. The coach diagnoses second.</h2>
-        <div class="steps">
-          <div class="step"><span class="num">01</span><h3>Choose a mode</h3><p>Select OSCE, imaging or SBAs.</p></div>
-          <div class="step"><span class="num">02</span><h3>Attempt first</h3><p>Retrieval comes before explanation, every time.</p></div>
-          <div class="step"><span class="num">03</span><h3>Structured feedback</h3><p>Strengths, omissions and safety-critical gaps, named separately.</p></div>
-          <div class="step"><span class="num">04</span><h3>Remediate</h3><p>Focused teaching on exactly what you missed &mdash; not a full re-read.</p></div>
-          <div class="step"><span class="num">05</span><h3>Retest</h3><p>A near-transfer question checks the fix actually held.</p></div>
-        </div>
-      </section>
-
-      <section class="block" aria-labelledby="why-h">
-        <p class="kicker">Why OrthoSG</p>
-        <h2 id="why-h">Built to be practised, not just read.</h2>
-        <div class="why-grid">
-          <span class="why-item">Designed specifically for orthopaedic finals, not general medicine</span>
-          <span class="why-item">A conversational AI examiner, not a static question bank</span>
-          <span class="why-item">Source-grounded teaching, with local-policy dependencies flagged</span>
-          <span class="why-item">Structured formative feedback after every attempt</span>
-          <span class="why-item">Safety-focused clinical reasoning throughout, not a bolt-on section</span>
-          <span class="why-item">Built for repeated revision across the run-up to finals</span>
-        </div>
-      </section>
-
-      <section class="block" aria-labelledby="evidence-h">
-        <p class="kicker">Evidence and safety</p>
-        <h2 id="evidence-h">Formative, source-conscious, and clear about its limits.</h2>
-        <div class="evidence-box">
-          <p>OrthoSG is an educational revision tool. Clinical content is curated and progressively source-verified against authoritative references. Where a recommendation depends on local institutional policy, this is explicitly flagged for local verification rather than presented as universal.</p>
-          <p>OrthoSG does not certify competence and does not replace clinical supervision, institutional protocols or professional judgement.</p>
-        </div>
-      </section>
-
-      <section class="block" aria-labelledby="feedback-h">
-        <div class="feedback-box">
-          <div class="copy">
-            <p class="kicker" style="margin:0">Help improve OrthoSG</p>
-            <h2 id="feedback-h" style="margin:6px 0 0">Two minutes shapes the next release.</h2>
-            <p>Usefulness, realism, ease of use, your favourite mode, anything that felt wrong or inaccurate, and whether you'd recommend it to a classmate.</p>
-          </div>
-          <a class="button primary" href="https://forms.gle/eQ61Pxj2G6DMyGLh9" target="_blank" rel="noopener">Give 2-minute feedback <span aria-hidden="true">&rarr;</span></a>
-        </div>
-      </section>
-    </main>
-
-    <footer><p>&copy; 2026 OrthoSG &middot; Independent educational resource</p><a href="https://orthosg-finals-coach.med50091.chatgpt.site">Open the coach &rarr;</a></footer>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav">
+  <div class="nav-in">
+    <a class="brand" href="index.html"><span class="mark">SG</span> OrthoSG Finals Coach</a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="voice-viva.html" data-feature="voiceViva">Voice Viva</a>
+      <a href="index.html#practice">Practice modes</a>
+      <a href="index.html#how">How it works</a>
+      <a href="index.html#evidence">Evidence</a>
+      <a class="feedback-link" href="feedback.html">Feedback</a>
+      <!-- RESEARCH-NAV-SLOT -->
+      <a class="btn btn-primary btn-sm gpt-link" href="#">Start practising</a>
+    </nav>
   </div>
+</header>
+<main id="main">
+
+<section class="first">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">AI Orthopaedic Finals Coach</p>
+      <h1>Practise orthopaedic finals <span>with an AI examiner.</span></h1>
+      <p class="lede" style="font-size:1.08rem">Viva, OSCE, imaging and SBA practice with structured feedback and source-grounded teaching. You attempt first. Feedback comes second.</p>
+      <p class="strapline">Voice viva &bull; Part B OSCE &bull; X-rays &bull; SBAs &bull; Targeted revision</p>
+      <div class="cta-row">
+        <a class="btn btn-primary gpt-link" href="#">Start practising</a>
+        <a class="btn btn-ghost" href="voice-viva.html" data-feature="voiceViva">&#127908; Try a Voice Viva</a>
+        <a class="btn btn-ghost" href="#practice" data-feature-off="voiceViva">Choose a practice mode</a>
+      </div>
+      <p class="hint">Free to use with ChatGPT. Some advanced ChatGPT features may have separate usage limits.</p>
+    </div>
+    <div class="mock" aria-label="Example viva station">
+      <div class="mock-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="t">viva &middot; cauda equina syndrome</span></div>
+      <div class="mock-body" id="mockBody">
+        <div class="msg u"><span class="who">You</span>Start a 9-minute Part B viva. Act as the examiner.</div>
+        <div class="msg c"><span class="who">Examiner</span>A 48-year-old with worsening lower back pain reports new difficulty initiating urination. What are the three history domains you would clarify immediately?</div>
+      </div>
+      <div class="mock-controls">
+        <button class="pill" data-mock="answer">Answer</button>
+        <button class="pill" data-mock="feedback">End station</button>
+        <button class="pill" data-mock="harder">Near-transfer</button>
+        <button class="pill" data-mock="passport">Revision Passport</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="practice">
+  <div class="wrap">
+    <p class="eyebrow">Choose your practice</p>
+    <h2>Pick a mode. Start answering within thirty seconds.</h2>
+    <div class="g5" style="margin-top:26px">
+      <a class="mode-card" href="voice-viva.html" data-feature="voiceViva"><span class="ic">&#127908;</span><h3>Voice Viva</h3><p>Answer aloud and practise real-time clinical reasoning with an AI examiner.</p><span class="go">Practise aloud &rarr;</span></a>
+      <a class="mode-card" href="part-b-osce.html"><span class="ic">&#127917;</span><h3>Part B OSCE</h3><p>Timed exam-style stations with structured formative feedback afterwards.</p><span class="go">Run a station &rarr;</span></a>
+      <a class="mode-card" href="orthopaedic-xrays.html"><span class="ic">&#129703;</span><h3>Imaging</h3><p>Practise systematic interpretation and the viva questions that follow it.</p><span class="go">Read a film &rarr;</span></a>
+      <a class="mode-card" href="sba.html"><span class="ic">&#128221;</span><h3>SBAs</h3><p>High-yield single-best-answer questions with reasoning and remediation.</p><span class="go">Start a set &rarr;</span></a>
+      <a class="mode-card" href="weak-areas.html"><span class="ic">&#129504;</span><h3>Find my weak areas</h3><p>A short diagnostic, then targeted revision aimed at what you actually missed.</p><span class="go">Diagnose gaps &rarr;</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="how">
+  <div class="wrap">
+    <p class="eyebrow">How it works</p>
+    <h2>Attempt first. Feedback second. Remediate. Retest.</h2>
+    <p class="lede">Every mode runs the same loop, because showing you a model answer you never attempted teaches almost nothing.</p>
+    <div class="loop" style="margin-top:26px">
+      <div class="step"><span class="n">Step 1</span><h3>Choose a mode</h3><p>Viva, OSCE, imaging or SBA.</p></div>
+      <div class="step"><span class="n">Step 2</span><h3>Attempt before the answer</h3><p>Retrieval comes first. Nothing is revealed until you commit.</p></div>
+      <div class="step"><span class="n">Step 3</span><h3>Structured feedback</h3><p>Strengths, omissions and safety-critical gaps, kept separate.</p></div>
+      <div class="step"><span class="n">Step 4</span><h3>Remediate immediately</h3><p>Two minutes of focused teaching on what you actually missed.</p></div>
+      <div class="step"><span class="n">Step 5</span><h3>Retest</h3><p>A near-transfer question checks whether the principle stuck.</p></div>
+    </div>
+
+    <div class="grid g2" style="margin-top:32px;align-items:start">
+      <div>
+        <h3 style="margin-bottom:12px">What the feedback looks like</h3>
+        <div class="card">
+          <div class="fb-line"><span class="m">&#9989;</span><span><strong>Done well</strong> &mdash; you led with time course and asked about bladder function unprompted.</span></div>
+          <div class="fb-line"><span class="m">&#9888;&#65039;</span><span><strong>Incomplete</strong> &mdash; saddle sensation was mentioned but not characterised.</span></div>
+          <div class="fb-line"><span class="m">&#10060;</span><span><strong>Missed</strong> &mdash; bilateral leg symptoms and new motor weakness.</span></div>
+          <div class="fb-line"><span class="m">&#128680;</span><span><strong>Safety-critical</strong> &mdash; you did not state the need for urgent imaging.</span></div>
+          <div class="fb-line"><span class="m">&#127919;</span><span><strong>One priority</strong> &mdash; always screen bilateral symptoms before closing the history.</span></div>
+        </div>
+      </div>
+      <div>
+        <h3 style="margin-bottom:12px">Why that beats a model answer</h3>
+        <p style="font-size:.94rem;color:var(--ink-2)">A model answer tells you what a good answer contains. It does not tell you which part <em>you</em> left out, or why. Separating strengths from omissions from safety-critical gaps is what makes the next attempt different from the last one.</p>
+        <p style="font-size:.94rem;color:var(--ink-2)">The single improvement priority is deliberate. Five corrections at once produce no change; one produces some.</p>
+        <div class="notice">Formative feedback and any scores are for learning only. They are not evidence of clinical competence and not an official marking scheme.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="why">
+  <div class="wrap">
+    <p class="eyebrow">Why OrthoSG rather than a general assistant</p>
+    <h2>You can already ask any chatbot about compartment syndrome.</h2>
+    <p class="lede">That is not the hard part. The hard part is being examined on it, being told precisely what you missed, and being made to do it again.</p>
+    <div class="grid g3" style="margin-top:26px">
+      <div class="card"><span class="tag">Examination architecture</span><h3>Built as an examiner, not an encyclopedia</h3><p>Stations start, run and stop. Questions come one at a time. Answers are withheld until you commit.</p></div>
+      <div class="card"><span class="tag">Curation</span><h3>Designed for orthopaedic finals</h3><p>Scope, weighting and difficulty are set for finals, not for general orthopaedic interest.</p></div>
+      <div class="card"><span class="tag">Provenance</span><h3>Source-grounded teaching</h3><p>Claims are mapped to authoritative references, and gaps are flagged rather than filled with confident guesswork.</p></div>
+      <div class="card"><span class="tag">Feedback</span><h3>Structured, not encouraging</h3><p>Strengths, omissions, safety-critical gaps and one priority &mdash; kept visibly separate.</p></div>
+      <div class="card"><span class="tag">Safety</span><h3>Safety-critical omissions are named</h3><p>The things that would harm a patient are called out explicitly, not folded into general feedback.</p></div>
+      <div class="card"><span class="tag">Repetition</span><h3>Made for returning</h3><p>Weak topics come back. Stations get harder. The passport carries progress into your next session.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="evidence">
+  <div class="wrap">
+    <p class="eyebrow">The OrthoSG Evidence Standard</p>
+    <h2>Source grounded. Finals focused. Safety aware.</h2>
+    <p class="lede">A visible quality standard, including the parts that are still in progress.</p>
+    <div class="evidence" style="margin-top:24px">
+      <div class="ev"><span class="k ok">GROUNDED</span><span>Clinical content is curated and progressively source verified against authoritative references, with claim-to-source mapping maintained.</span></div>
+      <div class="ev"><span class="k ok">REVIEWED</span><span>Faculty reviewed where feasible. Legacy material carries partial quality assurance only and is being corrected on a rolling basis.</span></div>
+      <div class="ev"><span class="k ok">RELEVANT</span><span>Scope, weighting and difficulty are set for orthopaedic finals rather than general interest.</span></div>
+      <div class="ev"><span class="k ok">SAFETY CHECKED</span><span>Must-not-miss presentations recur across modes, and safety-critical omissions are named explicitly in feedback.</span></div>
+      <div class="ev"><span class="k chk">CONTEXTUAL</span><span>Thresholds are presented as contextual rather than universal rules, because most of them are.</span></div>
+      <div class="ev"><span class="k chk">LOCAL CHECK</span><span>Where a recommendation depends on institutional or Singapore-specific policy, it is marked for local verification rather than guessed.</span></div>
+    </div>
+    <div class="notice red" style="margin-top:24px">
+      <p style="margin:0">OrthoSG is designed for formative learning and exam preparation. It does not replace clinical supervision, institutional protocols or professional judgement, and it does not certify clinical competence. Do not enter identifiable patient information &mdash; here or in the coach.</p>
+    </div>
+  </div>
+</section>
+
+<section id="prompts">
+  <div class="wrap">
+    <p class="eyebrow">Try this prompt</p>
+    <h2>Copy one. Paste it. You are practising.</h2>
+    <p class="lede" style="margin-bottom:0"><strong>Copy &amp; start</strong> copies the prompt and opens OrthoSG in a new tab &mdash; paste it in and the station begins.</p>
+    <div class="grid g3" id="promptGrid" style="margin-top:26px"></div>
+    <div class="cta-row" style="margin-top:26px"><a class="btn btn-primary gpt-link" href="#">Start practising</a></div>
+  </div>
+</section>
+
+<section class="alt" id="topics">
+  <div class="wrap">
+    <p class="eyebrow">Topic coverage</p>
+    <h2>Six domains, weighted towards finals.</h2>
+    <div class="grid g3" style="margin-top:26px">
+      <div class="card"><span class="tag">Trauma &amp; emergencies</span><p>Open fractures, compartment syndrome, hip fractures, pelvic injuries, dislocations, ankle and distal radius fractures, tibial plateau and femoral shaft injuries, neurovascular assessment.</p></div>
+      <div class="card"><span class="tag">Spine</span><p>Back-pain red flags, cauda equina syndrome, metastatic cord compression, spinal trauma, cervical myelopathy, radiculopathy, lumbar stenosis, inflammatory back pain.</p></div>
+      <div class="card"><span class="tag">Paediatrics</span><p>The limping child, septic arthritis, osteomyelitis, SUFE, supracondylar fractures and other high-yield paediatric presentations.</p></div>
+      <div class="card"><span class="tag">Upper limb &amp; hand</span><p>Shoulder instability, rotator cuff pathology, scaphoid injury and common upper-limb presentations.</p></div>
+      <div class="card"><span class="tag">Hip, knee &amp; sports</span><p>Osteoarthritis, ligament and meniscal pathology, and common hip and knee presentations.</p></div>
+      <div class="card"><span class="tag">Infection &amp; oncology</span><p>The hot joint, musculoskeletal infection, aggressive bone lesions and appropriate escalation.</p></div>
+    </div>
+    <div class="flags" style="margin-top:26px">
+      <span class="flag">Open fractures</span><span class="flag">Compartment syndrome</span><span class="flag">Neurovascular injury</span>
+      <span class="flag">Cauda equina syndrome</span><span class="flag">Metastatic spinal cord compression</span><span class="flag">Septic arthritis</span>
+      <span class="flag">Osteomyelitis</span><span class="flag">SUFE</span><span class="flag">Supracondylar fractures</span>
+      <span class="flag">Knee dislocation</span><span class="flag">Cervical myelopathy</span><span class="flag">The limping child</span>
+    </div>
+    <p class="hint" style="margin-top:14px">Must-not-miss presentations sit in the top layer of the topic map, so they recur across vivas, stations, films and question sets.</p>
+  </div>
+</section>
+
+<section id="passport">
+  <div class="wrap grid g2" style="align-items:center">
+    <div>
+      <p class="eyebrow">Come back and continue</p>
+      <h2>Progress you can carry into the next session.</h2>
+      <p class="lede">Topics move between New, Learning and Secure as you retrieve them. Mastery does not persist automatically between chats, so the passport is copyable &mdash; paste it into a new session and say &ldquo;continue my revision&rdquo;.</p>
+      <p style="font-size:.93rem;color:var(--ink-2)">Labels describe your revision state only. They are not a judgement about clinical competence.</p>
+      <div style="margin-top:16px"><div class="qbox"><span>Here is my Revision Passport. Continue my revision from my weakest topics.</span><span class="btns"><button class="copy" data-copy="Here is my Revision Passport. Continue my revision from my weakest topics.">Copy</button><button class="copy launch" data-copy="Here is my Revision Passport. Continue my revision from my weakest topics." data-launch>Copy &amp; start &rarr;</button></span></div></div>
+    </div>
+    <div class="pass">
+      <h3 style="margin-bottom:14px">Revision Passport</h3>
+      <div class="pass-row"><span><code>TRA-03</code> Compartment syndrome</span><span class="status s-learning">Learning</span></div>
+      <div class="pass-row"><span><code>SPI-02</code> Cauda equina syndrome</span><span class="status s-secure">Secure</span></div>
+      <div class="pass-row"><span><code>PED-04</code> SUFE</span><span class="status s-learning">Review tomorrow</span></div>
+      <div class="pass-row"><span><code>UPL-01</code> Shoulder instability</span><span class="status s-new">New</span></div>
+      <div class="pass-row"><span>Safety-critical omissions this session</span><span class="status s-learning">2 logged</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="help">
+  <div class="wrap narrow" style="text-align:center">
+    <p class="eyebrow">Help improve OrthoSG</p>
+    <h2>Two minutes shapes the next release.</h2>
+    <p class="lede" style="margin:14px auto 22px">Usefulness, realism, ease of use, your favourite mode, anything that felt wrong or inaccurate, and whether you would recommend it to a classmate.</p>
+    <div class="cta-row" style="justify-content:center">
+      <a class="btn btn-primary feedback-link" href="feedback.html">Give 2-minute feedback</a>
+      <a class="btn btn-ghost" href="feedback.html#report">Report something specific</a>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap narrow">
+    <p class="eyebrow">FAQ</p>
+    <h2 style="margin-bottom:24px">Questions worth asking first.</h2>
+    <details><summary>What does it cost?</summary><div class="body"><p>Free to use with ChatGPT. Some advanced ChatGPT features, such as image upload and file analysis, may have separate usage limits set by ChatGPT. The core experience &mdash; viva, OSCE, SBAs, reasoning, remediation and revision planning &mdash; works through conversation alone.</p></div></details>
+    <details><summary>Is this affiliated with my medical school?</summary><div class="body"><p>No. It is an independent educational revision tool and is not affiliated with or endorsed by YLL, LKCMedicine, Duke-NUS or any healthcare institution.</p></div></details>
+    <details><summary>Does it contain real examination questions?</summary><div class="body"><p>No. Practice questions and stations are original formative revision material. They are not confidential examination content and not official marking schemes.</p></div></details>
+    <details><summary>Can it predict my finals?</summary><div class="body"><p>No. Curriculum mapping helps you prioritise revision. It is not an examination blueprint, a frequency prediction or a guarantee of what will be examined.</p></div></details>
+    <details><summary>Does a good score mean I am competent?</summary><div class="body"><p>No, and this matters. Scores from any mode, including voice, are formative only. They indicate how you performed on generated practice material. They are not evidence of clinical competence and do not certify anything.</p></div></details>
+    <details><summary>Does it remember my progress?</summary><div class="body"><p>Progress labels operate within the current session. Ask for a Revision Passport and paste it into your next chat to carry your progress forward.</p></div></details>
+    <details><summary>Can I use it for real patients?</summary><div class="body"><p>No. It is designed for education, not patient-specific or real-time clinical decisions. Use fictional or de-identified cases, never enter identifiable patient information, and follow your supervisors and local pathways.</p></div></details>
+    <details><summary>What do I do if it tells me something wrong?</summary><div class="body"><p>Report it. Use the <a href="feedback.html">feedback form</a> and include the topic and the prompt you used. Reports of clinically unsafe content are reviewed by a clinician before any change is made.</p></div></details>
+    <!-- RESEARCH-FAQ-SLOT -->
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap" style="text-align:center">
+    <h2>Instead of reading another set of notes, get examined.</h2>
+    <p class="lede" style="margin:14px auto 24px">Open the coach and answer your first question within thirty seconds.</p>
+    <a class="btn btn-primary gpt-link" href="#">Start practising</a>
+    <!-- RESEARCH-TRUST-SLOT -->
+  </div>
+</section>
+
+</main>
+<a class="btn btn-primary sticky gpt-link" href="#">Start practising</a>
+<div class="toast" role="status" aria-live="polite"></div>
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="index.html" style="color:#fff;margin-bottom:12px"><span class="mark" style="background:#fff;color:var(--navy)">SG</span> OrthoSG Finals Coach</a>
+        <p style="max-width:44ch">Practise orthopaedic finals with an AI examiner. Formative education &mdash; not certification of clinical competence.</p>
+        <p class="verline" style="color:#8FA6B8"><span class="verslot"></span></p>
+      </div>
+      <div><h4>Practise</h4><ul class="foot-links">
+        <li><a href="voice-viva.html" data-feature="voiceViva">Voice Viva</a></li>
+        <li><a href="part-b-osce.html">Part B OSCE</a></li>
+        <li><a href="orthopaedic-xrays.html">Imaging</a></li>
+        <li><a href="sba.html">SBAs</a></li>
+        <li><a href="weak-areas.html">Find my weak areas</a></li>
+      </ul></div>
+      <div><h4>About</h4><ul class="foot-links">
+        <li><a href="index.html#evidence">Evidence standard</a></li>
+        <li><a href="index.html#faq">FAQ</a></li>
+        <li><a class="feedback-link" href="feedback.html">Give 2-minute feedback</a></li>
+        <li><a href="feedback.html#unsafe">Report unsafe content</a></li>
+        <!-- RESEARCH-FOOTER-SLOT -->
+      </ul></div>
+    </div>
+    <div class="rule">
+      <p>OrthoSG is an educational revision tool. It does not replace clinical supervision, institutional protocols or professional judgement. Not affiliated with or endorsed by Yong Loo Lin School of Medicine, LKCMedicine, Duke-NUS or any healthcare institution. Practice questions and stations are original formative material, not confidential examination content or official marking schemes.</p>
+      <p style="margin:0">&copy; <span class="yr"></span> OrthoSG Finals Coach.</p>
+    </div>
+  </div>
+</footer>
+<script src="assets/config.js"></script>
+<script src="assets/site.js"></script>
+<!-- RESEARCH-SCRIPT-SLOT -->
+
 </body>
 </html>
