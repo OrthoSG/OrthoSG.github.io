@@ -1,12 +1,17 @@
 :root{
-  --navy:#0B1F33; --blue:#176B87; --teal:#19A7A0; --paper:#F7F9FC;
-  --amber:#F4A261; --red:#D64545;
-  --ink:#0B1F33; --ink-2:#3B5064; --ink-3:#6B8095;
-  --line:#D9E2EC; --line-soft:#E8EEF4; --white:#fff;
-  --display:'Manrope',system-ui,sans-serif;
-  --body:'Inter',system-ui,sans-serif;
-  --mono:'IBM Plex Mono',ui-monospace,monospace;
-  --r:10px; --maxw:1120px;
+    /* KKH-derived palette. --blue (#2E71CD) is confirmed from kkh.com.sg's own
+       rendered CTA/nav colour and matches third-party brand-colour extraction;
+       --navy and --teal (now a KKH rose/pink) are derived from it and from the
+       pink accent sampled off kkh.com.sg -- not lifted from an official KKH
+       style-guide PDF, so treat exact hexes as a close approximation. */
+    --navy:#0E2E56; --blue:#2E71CD; --teal:#D6336C; --paper:#F7F9FC;
+    --amber:#F4A261; --red:#D64545;
+    --ink:#0E2E56; --ink-2:#3B5064; --ink-3:#6B8095;
+    --line:#D9E2EC; --line-soft:#E8EEF4; --white:#fff;
+    --display:'Manrope',system-ui,sans-serif;
+    --body:'Inter',system-ui,sans-serif;
+    --mono:'IBM Plex Mono',ui-monospace,monospace;
+    --r:10px; --maxw:1120px;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
