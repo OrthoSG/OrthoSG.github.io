@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>OrthoSG | Singapore Orthopaedic Finals Revision</title>
-  <meta name="description" content="Launch the OrthoSG Finals Revision Hub: a formative Singapore-focused resource with a 72-topic map, MCQs, OSCE practice and a 21-day plan.">
+  <title>OrthoSG | Open the Finals Coach</title>
+  <meta name="description" content="Open OrthoSG Finals Coach for adaptive SBA, OSCE, imaging and viva practice for Singapore medical finals.">
   <meta name="theme-color" content="#24304B">
-  <meta property="og:title" content="OrthoSG | Finals Revision Hub">
-  <meta property="og:description" content="One place. Every revision mode.">
+  <meta property="og:title" content="OrthoSG Finals Coach">
+  <meta property="og:description" content="Adaptive orthopaedic finals practice, one case at a time.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://orthosg.github.io/">
   <meta property="og:image" content="https://orthosg-finals-coach.med50091.chatgpt.site/og.png">
@@ -15,11 +15,26 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
   <style>
-    :root{--ink:#24304b;--blue:#2f73a8;--blue-soft:#edf6fc;--pink:#c33d79;--berry:#9f2f63;--pink-soft:#fceef5;--paper:#fcf9fb;--white:#fff;--muted:#5d6678;--line:#e5dce2;--green:#2f817d}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;min-height:100vh;-webkit-font-smoothing:antialiased}a{color:inherit}.skip{position:absolute;left:-999px;top:8px;background:#fff;padding:12px 16px;border-radius:10px;z-index:20}.skip:focus{left:10px}.shell{min-height:100vh;display:grid;grid-template-rows:auto 1fr auto;overflow:hidden;background:radial-gradient(circle at 12% 12%,rgba(195,61,121,.12),transparent 27rem),radial-gradient(circle at 88% 18%,rgba(47,115,168,.13),transparent 31rem),linear-gradient(145deg,#fffafd 0%,#faf6f9 48%,#f3f8fc 100%)}header,main,footer{width:min(1180px,calc(100% - 40px));margin:auto}header{position:relative;height:86px;display:flex;align-items:center;border-bottom:1px solid rgba(159,47,99,.13)}header::before{content:"";position:fixed;inset:0 0 auto;height:3px;background:linear-gradient(90deg,var(--blue) 0 48%,var(--pink) 52% 100%)}.brand{display:flex;align-items:center;gap:12px;text-decoration:none}.mark{width:44px;height:44px;display:grid;place-items:center;border-radius:15px;background:linear-gradient(135deg,var(--blue) 0 48%,var(--pink) 52% 100%);color:#fff;font:800 20px Manrope,sans-serif;box-shadow:inset 0 1px rgba(255,255,255,.4),0 12px 28px -16px rgba(73,45,74,.5)}.brand span:last-child{display:flex;flex-direction:column}.brand strong{font:800 16px Manrope,sans-serif;letter-spacing:-.02em}.brand small{font:500 9px "IBM Plex Mono",monospace;letter-spacing:.15em;text-transform:uppercase;color:var(--muted)}.status{margin-left:auto;display:flex;align-items:center;gap:9px;font-size:11px;color:var(--green);font-weight:600}.status::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 0 5px rgba(47,129,125,.1)}main{display:grid;grid-template-columns:1.08fr .92fr;gap:76px;align-items:center;padding:78px 0 86px}.eyebrow{margin:0 0 20px;color:var(--berry);font:500 10px "IBM Plex Mono",monospace;letter-spacing:.18em}.hero h1{font:800 clamp(52px,6.7vw,82px)/.98 Manrope,sans-serif;letter-spacing:-.062em;margin:0 0 28px;max-width:10ch}.hero h1 em{font-style:normal;background:linear-gradient(105deg,var(--blue),var(--berry));-webkit-background-clip:text;background-clip:text;color:transparent}.lede{max-width:650px;color:var(--muted);font-size:18px;line-height:1.72;margin:0}.actions{display:flex;gap:12px;margin-top:34px}.button{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:14px 22px;border-radius:999px;font:700 13px Manrope,sans-serif;text-decoration:none;transition:transform .2s ease,box-shadow .2s ease,background .2s ease}.primary{background:linear-gradient(110deg,var(--ink),#334a70 56%,var(--berry));color:#fff;box-shadow:0 15px 30px -17px rgba(76,43,79,.7)}.primary:hover{transform:translateY(-2px);box-shadow:0 19px 34px -17px rgba(76,43,79,.7)}.secondary{border:1px solid #ddccd6;color:var(--berry);background:rgba(255,255,255,.66)}.secondary:hover{transform:translateY(-2px);background:var(--pink-soft);border-color:var(--pink)}.trust{display:flex;gap:10px;flex-wrap:wrap;margin-top:34px}.trust span{padding:7px 11px;border:1px solid rgba(47,115,168,.16);border-radius:999px;background:rgba(255,255,255,.62);color:#596579;font-size:10px;letter-spacing:.04em}.trust span:nth-child(even){border-color:rgba(195,61,121,.18);background:rgba(252,238,245,.66)}.trust span::before{content:"✓";color:var(--green);font-weight:900;margin-right:6px}.panel{position:relative;background:rgba(255,255,255,.84);border:1px solid rgba(104,74,98,.14);border-radius:28px;padding:34px;box-shadow:0 34px 80px -48px rgba(64,40,62,.54),inset 0 1px rgba(255,255,255,.92);overflow:hidden;backdrop-filter:blur(18px)}.panel::before{content:"";position:absolute;inset:0 0 auto;height:4px;background:linear-gradient(90deg,var(--blue),var(--pink))}.panel::after{content:"";position:absolute;width:250px;height:250px;border:48px solid rgba(195,61,121,.04);border-radius:50%;right:-140px;top:-145px}.panel-label{position:relative;z-index:1;color:var(--berry);font:500 9px "IBM Plex Mono",monospace;letter-spacing:.16em}.panel h2{position:relative;z-index:1;font:800 31px/1.12 Manrope,sans-serif;letter-spacing:-.04em;margin:16px 0 25px}.features{position:relative;z-index:1;display:grid;gap:10px}.feature{display:grid;grid-template-columns:40px 1fr;gap:13px;padding:15px;border:1px solid #e8dfe4;border-radius:16px;background:linear-gradient(135deg,#fff,#fff9fc)}.feature:nth-child(even){background:linear-gradient(135deg,#fff,#f5faff);border-color:#dceaf3}.feature b{width:34px;height:34px;display:grid;place-items:center;border-radius:11px;background:var(--pink-soft);font:500 10px "IBM Plex Mono",monospace;color:var(--berry)}.feature:nth-child(even) b{background:var(--blue-soft);color:var(--blue)}.feature strong{display:block;font:700 13px Manrope,sans-serif}.feature span{display:block;color:var(--muted);font-size:11px;margin-top:3px;line-height:1.5}.panel-note{position:relative;z-index:1;margin:21px 0 0;color:var(--muted);font-size:11px;line-height:1.65}footer{display:flex;align-items:center;gap:24px;border-top:1px solid rgba(159,47,99,.13);padding:26px 0;color:var(--muted);font-size:10px}footer p{margin:0}footer a{margin-left:auto;color:var(--berry);font-weight:700;text-decoration:none}a:focus-visible{outline:3px solid var(--pink);outline-offset:4px;border-radius:8px}
-    @media(max-width:860px){main{grid-template-columns:1fr;gap:46px;padding:58px 0 66px}.panel{max-width:680px}.hero h1{font-size:60px;max-width:12ch}}
-    @media(max-width:560px){header,main,footer{width:min(100% - 30px,1180px)}header{height:74px}.status{font-size:0}.hero h1{font-size:48px}.lede{font-size:16px}.actions{flex-direction:column}.button{width:100%}.trust{display:grid;gap:8px}.panel{padding:25px 20px}.panel h2{font-size:27px}footer{align-items:flex-start;flex-direction:column}footer a{margin-left:0}}
-    @media(prefers-reduced-motion:no-preference){.hero,.panel{animation:rise .58s cubic-bezier(.22,.7,.25,1) both}.panel{animation-delay:.09s}@keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}}
+    :root{--ink:#24304b;--blue:#2f73a8;--pink:#c33d79;--berry:#9f2f63;--paper:#fcf9fb;--muted:#5d6678;--line:#e5dce2;--green:#2f817d}
+    *{box-sizing:border-box}
+    body{margin:0;min-height:100vh;background:var(--paper);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+    a{color:inherit}.skip{position:absolute;left:-999px;top:10px;background:#fff;padding:12px 16px;border-radius:10px;z-index:20}.skip:focus{left:10px}
+    .shell{min-height:100vh;display:grid;grid-template-rows:auto 1fr auto;overflow:hidden;background:radial-gradient(circle at 12% 12%,rgba(195,61,121,.12),transparent 27rem),radial-gradient(circle at 88% 18%,rgba(47,115,168,.13),transparent 31rem),linear-gradient(145deg,#fffafd 0%,#faf6f9 48%,#f3f8fc 100%)}
+    header,main,footer{width:min(1080px,calc(100% - 40px));margin:auto}
+    header{position:relative;height:84px;display:flex;align-items:center;border-bottom:1px solid rgba(159,47,99,.13)}
+    header::before{content:"";position:fixed;inset:0 0 auto;height:3px;background:linear-gradient(90deg,var(--blue) 0 48%,var(--pink) 52% 100%)}
+    .brand{display:flex;align-items:center;gap:12px;text-decoration:none}.mark{width:42px;height:42px;display:grid;place-items:center;border-radius:14px;background:linear-gradient(135deg,var(--blue) 0 48%,var(--pink) 52% 100%);color:#fff;font:800 19px Manrope,sans-serif;box-shadow:0 12px 28px -16px rgba(73,45,74,.5)}
+    .brand span:last-child{display:flex;flex-direction:column}.brand strong{font:800 16px Manrope,sans-serif;letter-spacing:-.02em}.brand small{font:500 9px "IBM Plex Mono",monospace;letter-spacing:.15em;text-transform:uppercase;color:var(--muted)}
+    .status{margin-left:auto;display:flex;align-items:center;gap:9px;font-size:11px;color:var(--green);font-weight:600}.status::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 0 5px rgba(47,129,125,.1)}
+    main{display:grid;place-items:center;padding:72px 0 80px}.hero{max-width:820px;text-align:center}.eyebrow{margin:0 0 20px;color:var(--berry);font:500 10px "IBM Plex Mono",monospace;letter-spacing:.18em}
+    h1{font:800 clamp(50px,7.4vw,82px)/.98 Manrope,sans-serif;letter-spacing:-.06em;margin:0 auto 26px;max-width:12ch}h1 em{font-style:normal;background:linear-gradient(105deg,var(--blue),var(--berry));-webkit-background-clip:text;background-clip:text;color:transparent}
+    .lede{max-width:660px;margin:0 auto;color:var(--muted);font-size:18px;line-height:1.72}.actions{display:flex;justify-content:center;gap:12px;margin-top:34px}.button{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:14px 23px;border-radius:999px;font:700 13px Manrope,sans-serif;text-decoration:none;transition:transform .2s ease,box-shadow .2s ease,background .2s ease}.primary{background:linear-gradient(110deg,var(--ink),#334a70 56%,var(--berry));color:#fff;box-shadow:0 15px 30px -17px rgba(76,43,79,.7)}.primary:hover{transform:translateY(-2px);box-shadow:0 19px 34px -17px rgba(76,43,79,.7)}.secondary{border:1px solid #ddccd6;color:var(--berry);background:rgba(255,255,255,.68)}.secondary:hover{transform:translateY(-2px);background:#fceef5;border-color:var(--pink)}
+    .modes{display:flex;justify-content:center;gap:9px;flex-wrap:wrap;margin-top:34px}.modes span{padding:7px 12px;border:1px solid rgba(47,115,168,.16);border-radius:999px;background:rgba(255,255,255,.68);color:#596579;font:500 10px "IBM Plex Mono",monospace}.modes span:nth-child(even){border-color:rgba(195,61,121,.18);background:rgba(252,238,245,.72)}
+    .fine{margin:24px auto 0;max-width:620px;color:#727b8b;font-size:11px;line-height:1.65}
+    footer{display:flex;align-items:center;gap:24px;border-top:1px solid rgba(159,47,99,.13);padding:25px 0;color:var(--muted);font-size:10px}footer p{margin:0}footer a{margin-left:auto;color:var(--berry);font-weight:700;text-decoration:none}
+    a:focus-visible{outline:3px solid var(--pink);outline-offset:4px;border-radius:8px}
+    @media(max-width:560px){header,main,footer{width:min(100% - 30px,1080px)}header{height:74px}.status{font-size:0}main{padding:54px 0 62px}h1{font-size:48px}.lede{font-size:16px}.actions{flex-direction:column}.button{width:100%}.modes{gap:7px}footer{align-items:flex-start;flex-direction:column}footer a{margin-left:0}}
+    @media(prefers-reduced-motion:no-preference){.hero{animation:rise .58s cubic-bezier(.22,.7,.25,1) both}@keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}}
     @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
   </style>
 </head>
@@ -28,32 +43,22 @@
   <div class="shell">
     <header>
       <a class="brand" href="https://orthosg.github.io/" aria-label="OrthoSG home"><span class="mark">O</span><span><strong>OrthoSG</strong><small>Finals revision</small></span></a>
-      <div class="status">Revision hub available</div>
+      <div class="status">Coach available</div>
     </header>
     <main id="main">
       <section class="hero">
-        <p class="eyebrow">SINGAPORE · FINAL-YEAR ORTHOPAEDICS</p>
-        <h1>One place.<br>Every <em>revision mode.</em></h1>
-        <p class="lede">A practical, formative orthopaedic finals hub: plan your coverage, retrieve with questions, practise speaking through OSCEs and continue with the OrthoSG Study GPT.</p>
+        <p class="eyebrow">INDEPENDENT &middot; SINGAPORE MEDICAL FINALS</p>
+        <h1>Orthopaedics practice, <em>one case at a time.</em></h1>
+        <p class="lede">Open the AI revision coach for adaptive SBAs, OSCEs, imaging interpretation and viva practice.</p>
         <div class="actions">
-          <a class="button primary" href="https://orthosg-finals-coach.med50091.chatgpt.site">Launch Finals Coach <span aria-hidden="true">→</span></a>
-          <a class="button secondary" href="https://orthosg-finals-coach.med50091.chatgpt.site#topics">Browse the topic map</a>
+          <a class="button primary" href="https://orthosg-finals-coach.med50091.chatgpt.site">Open Finals Coach <span aria-hidden="true">&rarr;</span></a>
+          <a class="button secondary" href="https://orthosg-finals-coach.med50091.chatgpt.site/feedback.html">Send feedback</a>
         </div>
-        <div class="trust"><span>Independent formative resource</span><span>No patient information</span><span>Local policy takes precedence</span></div>
+        <div class="modes" aria-label="Available revision modes"><span>SPRINT</span><span>SBA</span><span>OSCE</span><span>IMAGING</span><span>VIVA</span></div>
+        <p class="fine">Formative learner self-study only. Not affiliated with a medical school or healthcare institution, and not a measure of clinical competence.</p>
       </section>
-      <aside class="panel" aria-label="Revision hub features">
-        <span class="panel-label">INSIDE THE FINALS COACH</span>
-        <h2>Move from coverage<br>to confident retrieval.</h2>
-        <div class="features">
-          <div class="feature"><b>01</b><div><strong>72-topic navigator</strong><span>Track new, learning and secure topics</span></div></div>
-          <div class="feature"><b>02</b><div><strong>MCQ and safety practice</strong><span>Commit before revealing the rationale</span></div></div>
-          <div class="feature"><b>03</b><div><strong>OSCE speaking circuits</strong><span>Perform first, then use the debrief</span></div></div>
-          <div class="feature"><b>04</b><div><strong>21-day revision plan</strong><span>Interleave, revisit and repair errors</span></div></div>
-        </div>
-        <p class="panel-note">For learner self-study only. The resource does not reproduce an official examination or establish clinical competence.</p>
-      </aside>
     </main>
-    <footer><p>© 2026 OrthoSG · Independent educational resource</p><a href="https://orthosg-finals-coach.med50091.chatgpt.site">Open the Finals Coach →</a></footer>
+    <footer><p>&copy; 2026 OrthoSG &middot; Independent educational resource</p><a href="https://orthosg-finals-coach.med50091.chatgpt.site">Open the coach &rarr;</a></footer>
   </div>
 </body>
 </html>
