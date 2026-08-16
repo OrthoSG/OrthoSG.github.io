@@ -45,8 +45,8 @@ header.nav{position:sticky;top:0;z-index:50;background:rgba(247,249,252,.93);bac
 @media(max-width:900px){.nav-links a:not(.btn){display:none}}
 
 .btn{display:inline-block;border:1px solid transparent;border-radius:8px;padding:11px 18px;font-family:var(--display);font-weight:700;font-size:.92rem;text-decoration:none;cursor:pointer;background:none}
-.btn-primary{background:var(--blue);color:#fff}
-.btn-primary:hover{background:#265DA8}
+.btn-primary{background:#1B4F91;color:#fff}
+.btn-primary:hover{background:#123765}
 .btn-ghost{border-color:var(--line);color:var(--navy);background:var(--white)}
 .btn-ghost:hover{border-color:var(--blue)}
 .btn-sm{padding:8px 14px;font-size:.85rem}
@@ -243,8 +243,8 @@ footer h4{color:#fff;font-size:.82rem;font-family:var(--mono);letter-spacing:.12
 
 /* ---------- copy-and-launch ---------- */
 .prompt .btns{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
-.copy.launch{background:var(--blue);color:#fff;border-color:var(--blue);white-space:nowrap}
-.copy.launch:hover{background:#265DA8;border-color:#265DA8}
+.copy.launch{background:#1B4F91;color:#fff;border-color:#1B4F91;white-space:nowrap}
+.copy.launch:hover{background:#123765;border-color:#123765}
 .qbox{flex-wrap:wrap}
 .qbox .btns{display:flex;gap:6px;flex-wrap:wrap}
 @media(max-width:520px){
