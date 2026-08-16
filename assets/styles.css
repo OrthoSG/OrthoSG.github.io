@@ -47,6 +47,7 @@ header.nav{position:sticky;top:0;z-index:50;background:rgba(247,249,252,.93);bac
 .btn{display:inline-block;border:1px solid transparent;border-radius:8px;padding:11px 18px;font-family:var(--display);font-weight:700;font-size:.92rem;text-decoration:none;cursor:pointer;background:none}
 .btn-primary{background:#A81F4E;color:#fff}
 .btn-primary:hover{background:#8A1940}
+.nav-links a.btn-primary,.nav-links a.btn-primary:hover{color:#fff}
 .btn-ghost{border-color:var(--line);color:var(--navy);background:var(--white)}
 .btn-ghost:hover{border-color:var(--blue)}
 .btn-sm{padding:8px 14px;font-size:.85rem}
