@@ -23,11 +23,12 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Fraunces:ital,wght@1,500;1,600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
+<div class="scrollbar" aria-hidden="true"></div>
 <header class="nav">
   <div class="nav-in">
     <a class="brand" href="index.html"><span class="mark">SG</span> OrthoSG Finals Coach</a>
@@ -47,18 +48,18 @@
 <section class="first">
   <div class="wrap hero-grid">
     <div>
-      <p class="eyebrow">AI Orthopaedic Finals Coach</p>
-      <h1>Practise orthopaedic finals <span>with an AI examiner.</span></h1>
-      <p class="lede" style="font-size:1.08rem">Viva, OSCE, imaging and SBA practice with structured feedback and source-grounded teaching. You attempt first. Feedback comes second.</p>
-      <p class="strapline">Voice viva &bull; Part B OSCE &bull; X-rays &bull; SBAs &bull; Targeted revision</p>
-      <div class="cta-row">
+      <p class="eyebrow rise rise-1">AI Orthopaedic Finals Coach</p>
+      <h1 class="rise rise-2">Practise orthopaedic finals <span class="accent">with an AI examiner.</span></h1>
+      <p class="lede rise rise-3" style="font-size:1.08rem">Viva, OSCE, imaging and SBA practice with structured feedback and source-grounded teaching. You attempt first. Feedback comes second.</p>
+      <p class="strapline rise rise-3">Voice viva &bull; Part B OSCE &bull; X-rays &bull; SBAs &bull; Targeted revision</p>
+      <div class="cta-row rise rise-4">
         <a class="btn btn-primary gpt-link" href="#">Start practising</a>
         <a class="btn btn-ghost" href="voice-viva.html" data-feature="voiceViva">&#127908; Try a Voice Viva</a>
         <a class="btn btn-ghost" href="#practice" data-feature-off="voiceViva">Choose a practice mode</a>
       </div>
-      <p class="hint">Free to use with ChatGPT. Some advanced ChatGPT features may have separate usage limits.</p>
+      <p class="hint rise rise-5">Free to use with ChatGPT. Some advanced ChatGPT features may have separate usage limits.</p>
     </div>
-    <div class="mock" aria-label="Example viva station">
+    <div class="mock rise rise-6" aria-label="Example viva station">
       <div class="mock-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="t">viva &middot; cauda equina syndrome</span></div>
       <div class="mock-body" id="mockBody">
         <div class="msg u"><span class="who">You</span>Start a 9-minute Part B viva. Act as the examiner.</div>
@@ -74,21 +75,28 @@
   </div>
 </section>
 
-<section id="practice">
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Voice Viva</span><span class="dim">&bull;</span><span>Part B OSCE</span><span class="dim">&bull;</span><span>Imaging</span><span class="dim">&bull;</span><span>SBAs</span><span class="dim">&bull;</span><span>Find my weak areas</span><span class="dim">&bull;</span><span>Safety-first reasoning</span><span class="dim">&bull;</span><span>Singapore finals core</span><span class="dim">&bull;</span>
+    <span>Voice Viva</span><span class="dim">&bull;</span><span>Part B OSCE</span><span class="dim">&bull;</span><span>Imaging</span><span class="dim">&bull;</span><span>SBAs</span><span class="dim">&bull;</span><span>Find my weak areas</span><span class="dim">&bull;</span><span>Safety-first reasoning</span><span class="dim">&bull;</span><span>Singapore finals core</span><span class="dim">&bull;</span>
+  </div>
+</div>
+
+<section id="practice" data-num="01">
   <div class="wrap">
     <p class="eyebrow">Choose your practice</p>
     <h2>Pick a mode. Start answering within thirty seconds.</h2>
-    <div class="g5" style="margin-top:26px">
+    <div class="bento" style="margin-top:26px">
       <a class="mode-card" href="voice-viva.html" data-feature="voiceViva"><span class="ic">&#127908;</span><h3>Voice Viva</h3><p>Answer aloud and practise real-time clinical reasoning with an AI examiner.</p><span class="go">Practise aloud &rarr;</span></a>
-      <a class="mode-card" href="part-b-osce.html"><span class="ic">&#127917;</span><h3>Part B OSCE</h3><p>Timed exam-style stations with structured formative feedback afterwards.</p><span class="go">Run a station &rarr;</span></a>
+      <a class="mode-card lg" href="part-b-osce.html"><span class="ic">&#127917;</span><h3>Part B OSCE</h3><p>Timed exam-style stations with structured formative feedback afterwards. Attempt the station, then get a structured self-check.</p><span class="go">Run a station &rarr;</span></a>
       <a class="mode-card" href="orthopaedic-xrays.html"><span class="ic">&#129703;</span><h3>Imaging</h3><p>Practise systematic interpretation and the viva questions that follow it.</p><span class="go">Read a film &rarr;</span></a>
-      <a class="mode-card" href="sba.html"><span class="ic">&#128221;</span><h3>SBAs</h3><p>High-yield single-best-answer questions with reasoning and remediation.</p><span class="go">Start a set &rarr;</span></a>
+      <a class="mode-card wide" href="sba.html"><span class="ic">&#128221;</span><h3>SBAs</h3><p>High-yield single-best-answer questions with reasoning and remediation.</p><span class="go">Start a set &rarr;</span></a>
       <a class="mode-card" href="weak-areas.html"><span class="ic">&#129504;</span><h3>Find my weak areas</h3><p>A short diagnostic, then targeted revision aimed at what you actually missed.</p><span class="go">Diagnose gaps &rarr;</span></a>
     </div>
   </div>
 </section>
 
-<section class="alt" id="how">
+<section class="alt" id="how" data-num="02">
   <div class="wrap">
     <p class="eyebrow">How it works</p>
     <h2>Attempt first. Feedback second. Remediate. Retest.</h2>
@@ -122,7 +130,7 @@
   </div>
 </section>
 
-<section id="why">
+<section id="why" class="section-dark" data-num="03">
   <div class="wrap">
     <p class="eyebrow">Why OrthoSG rather than a general assistant</p>
     <h2>You can already ask any chatbot about compartment syndrome.</h2>
@@ -138,7 +146,7 @@
   </div>
 </section>
 
-<section class="alt" id="evidence">
+<section class="alt" id="evidence" data-num="04">
   <div class="wrap">
     <p class="eyebrow">The OrthoSG Evidence Standard</p>
     <h2>Source grounded. Finals focused. Safety aware.</h2>
@@ -189,39 +197,45 @@
   </div>
 </section>
 
-<section id="passport">
-  <div class="wrap grid g2" style="align-items:center">
-    <div>
-      <p class="eyebrow">Come back and continue</p>
-      <h2>Progress you can carry into the next session.</h2>
-      <p class="lede">Topics move between New, Learning and Secure as you retrieve them. Mastery does not persist automatically between chats, so the passport is copyable &mdash; paste it into a new session and say &ldquo;continue my revision&rdquo;.</p>
-      <p style="font-size:.93rem;color:var(--ink-2)">Labels describe your revision state only. They are not a judgement about clinical competence.</p>
-      <div style="margin-top:16px"><div class="qbox"><span>Here is my Revision Passport. Continue my revision from my weakest topics.</span><span class="btns"><button class="copy" data-copy="Here is my Revision Passport. Continue my revision from my weakest topics.">Copy</button><button class="copy launch" data-copy="Here is my Revision Passport. Continue my revision from my weakest topics." data-launch>Copy &amp; start &rarr;</button></span></div></div>
-    </div>
-    <div class="pass">
-      <h3 style="margin-bottom:14px">Revision Passport</h3>
-      <div class="pass-row"><span><code>TRA-03</code> Compartment syndrome</span><span class="status s-learning">Learning</span></div>
-      <div class="pass-row"><span><code>SPI-02</code> Cauda equina syndrome</span><span class="status s-secure">Secure</span></div>
-      <div class="pass-row"><span><code>PED-04</code> SUFE</span><span class="status s-learning">Review tomorrow</span></div>
-      <div class="pass-row"><span><code>UPL-01</code> Shoulder instability</span><span class="status s-new">New</span></div>
-      <div class="pass-row"><span>Safety-critical omissions this session</span><span class="status s-learning">2 logged</span></div>
+<section id="passport" data-num="05">
+  <div class="wrap">
+    <p class="eyebrow">Come back and continue</p>
+    <h2>Progress you can carry into the next session.</h2>
+    <p class="lede">Every topic you touch moves between three states as you retrieve it. Mastery does not persist automatically between chats, so the passport is copyable &mdash; paste it into a new session and the coach picks up exactly where you left off.</p>
+
+    <div class="grid g2" style="margin-top:30px;align-items:start">
+      <div>
+        <h3 style="margin-bottom:14px">How to use it &mdash; four steps</h3>
+        <ol class="steps" style="list-style:none;padding:0;margin:0">
+          <li style="display:flex;gap:14px;align-items:flex-start;padding:13px 0;border-bottom:1px solid var(--line-soft)"><span class="tick now" style="flex:0 0 auto">1</span><span><strong style="font-family:var(--display);color:var(--navy)">Ask for it, any time.</strong><br><span style="font-size:.9rem;color:var(--ink-2)">Say &ldquo;Give me my Revision Passport&rdquo; mid-session or at the end of one.</span></span></li>
+          <li style="display:flex;gap:14px;align-items:flex-start;padding:13px 0;border-bottom:1px solid var(--line-soft)"><span class="tick now" style="flex:0 0 auto">2</span><span><strong style="font-family:var(--display);color:var(--navy)">Read your status per topic.</strong><br><span style="font-size:.9rem;color:var(--ink-2)">New, Learning or Secure &mdash; see the legend alongside &mdash; plus any safety-critical omissions logged that session.</span></span></li>
+          <li style="display:flex;gap:14px;align-items:flex-start;padding:13px 0;border-bottom:1px solid var(--line-soft)"><span class="tick now" style="flex:0 0 auto">3</span><span><strong style="font-family:var(--display);color:var(--navy)">Copy the passport.</strong><br><span style="font-size:.9rem;color:var(--ink-2)">One tap &mdash; the prompt box below does this for you.</span></span></li>
+          <li style="display:flex;gap:14px;align-items:flex-start;padding:13px 0"><span class="tick now" style="flex:0 0 auto">4</span><span><strong style="font-family:var(--display);color:var(--navy)">Paste it into your next session.</strong><br><span style="font-size:.9rem;color:var(--ink-2)">Open OrthoSG, paste, and the coach interleaves your weakest topics first instead of starting cold.</span></span></li>
+        </ol>
+        <div style="margin-top:18px"><div class="qbox"><span>Here is my Revision Passport. Continue my revision from my weakest topics.</span><span class="btns"><button class="copy" data-copy="Here is my Revision Passport. Continue my revision from my weakest topics.">Copy</button><button class="copy launch" data-copy="Here is my Revision Passport. Continue my revision from my weakest topics." data-launch>Copy &amp; start &rarr;</button></span></div></div>
+        <p style="font-size:.85rem;color:var(--ink-3);margin-top:14px">Labels describe your revision state only. They are not a judgement about clinical competence.</p>
+      </div>
+
+      <div>
+        <div class="pass">
+          <h3 style="margin-bottom:14px">Revision Passport</h3>
+          <div class="pass-row"><span><code>TRA-03</code> Compartment syndrome</span><span class="status s-learning">Learning</span></div>
+          <div class="pass-row"><span><code>SPI-02</code> Cauda equina syndrome</span><span class="status s-secure">Secure</span></div>
+          <div class="pass-row"><span><code>PED-04</code> SUFE</span><span class="status s-learning">Review tomorrow</span></div>
+          <div class="pass-row"><span><code>UPL-01</code> Shoulder instability</span><span class="status s-new">New</span></div>
+          <div class="pass-row"><span>Safety-critical omissions this session</span><span class="status s-learning">2 logged</span></div>
+        </div>
+        <div class="grid g3" style="margin-top:14px;gap:10px">
+          <div class="card" style="padding:14px"><span class="status s-new" style="margin-bottom:8px;display:inline-block">New</span><p style="font-size:.85rem;margin:0">Not yet attempted, or attempted once without success.</p></div>
+          <div class="card" style="padding:14px"><span class="status s-learning" style="margin-bottom:8px;display:inline-block">Learning</span><p style="font-size:.85rem;margin:0">Partly right. Due for a spaced repeat, usually within a few days.</p></div>
+          <div class="card" style="padding:14px"><span class="status s-secure" style="margin-bottom:8px;display:inline-block">Secure</span><p style="font-size:.85rem;margin:0">Retrieved correctly under pressure, more than once.</p></div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="alt" id="help">
-  <div class="wrap narrow" style="text-align:center">
-    <p class="eyebrow">Help improve OrthoSG</p>
-    <h2>Two minutes shapes the next release.</h2>
-    <p class="lede" style="margin:14px auto 22px">Usefulness, realism, ease of use, your favourite mode, anything that felt wrong or inaccurate, and whether you would recommend it to a classmate.</p>
-    <div class="cta-row" style="justify-content:center">
-      <a class="btn btn-primary feedback-link" href="feedback.html">Give 2-minute feedback</a>
-      <a class="btn btn-ghost" href="feedback.html#report">Report something specific</a>
-    </div>
-  </div>
-</section>
-
-<section id="faq">
+<section id="faq" data-num="06">
   <div class="wrap narrow">
     <p class="eyebrow">FAQ</p>
     <h2 style="margin-bottom:24px">Questions worth asking first.</h2>
@@ -232,15 +246,16 @@
     <details><summary>Does a good score mean I am competent?</summary><div class="body"><p>No, and this matters. Scores from any mode, including voice, are formative only. They indicate how you performed on generated practice material. They are not evidence of clinical competence and do not certify anything.</p></div></details>
     <details><summary>Does it remember my progress?</summary><div class="body"><p>Progress labels operate within the current session. Ask for a Revision Passport and paste it into your next chat to carry your progress forward.</p></div></details>
     <details><summary>Can I use it for real patients?</summary><div class="body"><p>No. It is designed for education, not patient-specific or real-time clinical decisions. Use fictional or de-identified cases, never enter identifiable patient information, and follow your supervisors and local pathways.</p></div></details>
-    <details><summary>What do I do if it tells me something wrong?</summary><div class="body"><p>Report it. Use the <a href="feedback.html">feedback form</a> and include the topic and the prompt you used. Reports of clinically unsafe content are reviewed by a clinician before any change is made.</p></div></details>
+    <details><summary>What do I do if it tells me something wrong?</summary><div class="body"><p>Report it. Use the <a class="feedback-link" href="feedback.html">feedback form</a> and include the topic and the prompt you used. Reports of clinically unsafe content are reviewed by a clinician before any change is made.</p></div></details>
     <!-- RESEARCH-FAQ-SLOT -->
   </div>
 </section>
 
-<section class="alt">
+<section class="section-dark cta-close">
   <div class="wrap" style="text-align:center">
-    <h2>Instead of reading another set of notes, get examined.</h2>
-    <p class="lede" style="margin:14px auto 24px">Open the coach and answer your first question within thirty seconds.</p>
+    <p class="eyebrow" style="color:#9FBDD3">Your finals are closer than the syllabus feels</p>
+    <h2 class="mega">Instead of reading another set of notes, <em>get examined.</em></h2>
+    <p class="lede" style="margin:16px auto 28px;color:#C4D6E4">Open the coach and answer your first question within thirty seconds.</p>
     <a class="btn btn-primary gpt-link" href="#">Start practising</a>
     <!-- RESEARCH-TRUST-SLOT -->
   </div>
@@ -268,7 +283,7 @@
         <li><a href="index.html#evidence">Evidence standard</a></li>
         <li><a href="index.html#faq">FAQ</a></li>
         <li><a class="feedback-link" href="feedback.html">Give 2-minute feedback</a></li>
-        <li><a href="feedback.html#unsafe">Report unsafe content</a></li>
+        <li><a class="feedback-link" href="feedback.html">Report a problem</a></li>
         <!-- RESEARCH-FOOTER-SLOT -->
       </ul></div>
     </div>
