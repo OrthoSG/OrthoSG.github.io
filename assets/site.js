@@ -43,6 +43,37 @@
     if (F[el.dataset.featureOff]) el.remove();
   });
 
+  /* ---------- subtle tilt on the hero mock card ----------
+     Desktop / hover-capable pointers only, and only when the visitor has
+     not asked for reduced motion. */
+  var mockCard = document.querySelector(".mock");
+  if (mockCard && window.matchMedia && matchMedia("(hover: hover)").matches && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    mockCard.addEventListener("mousemove", function (e) {
+      var r = mockCard.getBoundingClientRect();
+      var x = (e.clientX - r.left) / r.width - 0.5;
+      var y = (e.clientY - r.top) / r.height - 0.5;
+      mockCard.style.transform = "perspective(900px) rotateY(" + (x * 4) + "deg) rotateX(" + (y * -4) + "deg) translateY(-2px)";
+    });
+    mockCard.addEventListener("mouseleave", function () {
+      mockCard.style.transform = "";
+    });
+  }
+
+  /* ---------- scroll progress bar + floating nav shadow ---------- */
+  var scrollbarEl = document.querySelector(".scrollbar");
+  var navEl = document.querySelector("header.nav");
+  function updateScrollChrome() {
+    var d = document.documentElement;
+    var max = d.scrollHeight - d.clientHeight;
+    var pct = max > 0 ? (d.scrollTop / max) * 100 : 0;
+    if (scrollbarEl) scrollbarEl.style.width = pct + "%";
+    if (navEl) navEl.classList.toggle("scrolled", d.scrollTop > 8);
+  }
+  if (scrollbarEl || navEl) {
+    window.addEventListener("scroll", updateScrollChrome, { passive: true });
+    updateScrollChrome();
+  }
+
   /* ---------- current year ---------- */
   document.querySelectorAll(".yr").forEach(function (e) { e.textContent = new Date().getFullYear(); });
 
@@ -147,18 +178,61 @@
       harder: [["u", "Give me a harder version."], ["c", "A 71-year-old with known breast cancer has two weeks of thoracic back pain, now worse lying flat, with an unsteady gait. Bladder function is intact. What is your working diagnosis, and what is your first action within the hour?"]],
       passport: [["c", "Revision Passport \u00b7 SPI-02 Cauda equina \u2014 Secure \u00b7 SPI-05 Metastatic cord compression \u2014 Learning \u00b7 Unsafe omission logged: bilateral leg symptoms \u00b7 Next review: 2 days."]]
     };
+    var reducedMotion = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
     document.querySelectorAll("[data-mock]").forEach(function (btn) {
       btn.addEventListener("click", function () {
         if (btn.dataset.used) return;
         btn.dataset.used = "1"; btn.setAttribute("aria-pressed", "true");
-        MOCK[btn.dataset.mock].forEach(function (m) {
-          var d = document.createElement("div");
-          d.className = "msg " + m[0];
-          d.innerHTML = '<span class="who">' + (m[0] === "u" ? "You" : "Coach") + "</span>" + m[1];
-          mockBody.appendChild(d);
-        });
-        mockBody.scrollTop = mockBody.scrollHeight;
+        var seq = MOCK[btn.dataset.mock].slice();
+        (function next() {
+          if (!seq.length) return;
+          var m = seq.shift();
+          if (m[0] === "c" && !reducedMotion) {
+            var t = document.createElement("div");
+            t.className = "typing";
+            t.innerHTML = "<span></span><span></span><span></span>";
+            mockBody.appendChild(t);
+            mockBody.scrollTop = mockBody.scrollHeight;
+            setTimeout(function () {
+              t.remove();
+              var d = document.createElement("div");
+              d.className = "msg c";
+              d.innerHTML = '<span class="who">Coach</span>' + m[1];
+              mockBody.appendChild(d);
+              mockBody.scrollTop = mockBody.scrollHeight;
+              next();
+            }, 650);
+          } else {
+            var d = document.createElement("div");
+            d.className = "msg " + m[0];
+            d.innerHTML = '<span class="who">' + (m[0] === "u" ? "You" : "Coach") + "</span>" + m[1];
+            mockBody.appendChild(d);
+            mockBody.scrollTop = mockBody.scrollHeight;
+            next();
+          }
+        })();
       });
+    });
+  }
+
+  /* ---------- scroll reveal ----------
+     Fades/rises each section's .wrap into view once, the first time it
+     crosses the viewport. Hero (.first) is excluded — it has its own
+     .rise entrance choreography that plays on load, not on scroll. */
+  if (window.IntersectionObserver && !(window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches)) {
+    var revealTargets = document.querySelectorAll("section:not(.first) > .wrap");
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("in-view");
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+    revealTargets.forEach(function (el) { io.observe(el); });
+  } else {
+    document.querySelectorAll("section:not(.first) > .wrap").forEach(function (el) {
+      el.classList.add("in-view");
     });
   }
 
