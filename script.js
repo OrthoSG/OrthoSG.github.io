@@ -5,11 +5,13 @@ let paused = reducedMotion.matches;
 function setMotion() {
   document.body.classList.toggle('paused', paused);
   document.body.classList.toggle('motion-enabled', !paused);
-  motionButton.textContent = paused ? 'Enable motion' : 'Pause motion';
-  motionButton.setAttribute('aria-pressed', String(paused));
+  if (motionButton) {
+    motionButton.textContent = paused ? 'Enable motion' : 'Pause motion';
+    motionButton.setAttribute('aria-pressed', String(paused));
+  }
   updateScroll();
 }
-motionButton.addEventListener('click', () => { paused = !paused; setMotion(); });
+motionButton?.addEventListener('click', () => { paused = !paused; setMotion(); });
 reducedMotion.addEventListener('change', event => { paused = event.matches; setMotion(); });
 const words = [...document.querySelectorAll('.scroll-copy span')];
 let ticking = false;
@@ -26,7 +28,7 @@ window.addEventListener('scroll', () => {
 window.addEventListener('resize', updateScroll);
 setMotion();
 const waveform = document.querySelector('.waveform');
-for (let i = 0; i < 35; i++) {
+for (let i = 0; waveform && i < 35; i++) {
   const bar = document.createElement('i');
   const height = 12 + Math.abs(Math.sin(i * 1.72)) * 65 * Math.sin((i + 1) / 36 * Math.PI);
   bar.style.setProperty('--h', `${height}px`);
@@ -35,8 +37,9 @@ for (let i = 0; i < 35; i++) {
 }
 document.querySelectorAll('.copy').forEach(button => {
   button.addEventListener('click', async () => {
-    const prompt = button.closest('.prompt-card').querySelector('.prompt-text');
-    const status = document.querySelector('#copy-status');
+    const container = button.closest('.prompt-card, .practice-option');
+    const prompt = container.querySelector('.prompt-text, .mode-prompt');
+    const status = container.matches('.practice-option') ? document.querySelector('#launcher-copy-status') : document.querySelector('#copy-status');
     try {
       await navigator.clipboard.writeText(prompt.textContent.trim());
       button.textContent = 'Copied ✓';
