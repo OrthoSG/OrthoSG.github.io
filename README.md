@@ -11,7 +11,9 @@ index.html       Canonical landing page and GPT practice launcher
 about.html       Evidence, review, limitations and change log
 404.html         Branded not-found page returning visitors to the homepage
 styles.css       Shared visual system and responsive styles
-script.js        Motion controls and prompt-copy behaviour
+starter.js       Session prompts, copy/open recovery and Learning Passport
+motion.js        Optional reveal motion with reduced-motion and pause controls
+DESIGN-AUDIT.md  Local review, design decisions, validation and limits
 favicon.svg      Browser icon
 og.png           Social preview image
 sitemap.xml      Canonical public URLs
